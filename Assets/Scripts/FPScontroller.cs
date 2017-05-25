@@ -38,7 +38,9 @@ public class FPScontroller : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+#if UNITY_EDITOR
         RotateView();
+#endif
         GetInput();
     }
 
@@ -63,10 +65,11 @@ public class FPScontroller : MonoBehaviour {
         {
                      
             RaycastHit hit;
-            TeleportTo teleport;
+            //TeleportTo teleport;
             Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
             Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.forward, Color.red, 1000);
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
+            //transform.position = transform.position + m_Camera.transform.forward;
             if (hit.transform.gameObject.GetComponent<TeleportTo>())
             {
                 transform.position = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();

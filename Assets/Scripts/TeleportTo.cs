@@ -19,7 +19,11 @@ public class TeleportTo : MonoBehaviour {
 
     public Vector3 Teleport()
     {
-        return transform.position;
-        //return m_Player.transform.parent.transform.position;
+        
+        if(m_Player.transform.parent.transform.position.y + 0.5 > transform.position.y)
+        {
+            return transform.position + new Vector3(0, 0.5f, 0);
+        }
+        return m_Player.transform.parent.transform.position;
     }
 }
