@@ -20,7 +20,7 @@ public class TeleportTo : MonoBehaviour {
     public Vector3 Teleport()
     {
         
-        if(m_Player.transform.parent.transform.position.y + 0.5 > transform.position.y)
+        if(m_Player.transform.parent.transform.position.y + 1 > transform.position.y)
         {
             return transform.position + new Vector3(0, 0.5f, 0);
         }
