@@ -14,31 +14,37 @@ public class ScreenFadeOnTeleport : MonoBehaviour {
 	
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (fadeIn)
         {
             StartCoroutine(Fade());
         }
     }
-    public IEnumerator Fade()
+    private IEnumerator Fade()
     {
         Color texture = screenImage.color;
-        float alphaFade = 0f;
-        alphaFade += 1 * fadeSpeed * Time.deltaTime;
+        float alphaFade = texture.a;
+        alphaFade += fadeSpeed * Time.deltaTime;
         alphaFade = Mathf.Clamp01(alphaFade);
         texture.a = alphaFade;
         screenImage.color = texture;
+        yield return new WaitForSeconds(0.25f);
+        fadeIn = false;
         StartCoroutine(FadeBack());
-        yield return null;
     }
 	
     private IEnumerator FadeBack()
     {
         Color texture = screenImage.color;
-        float alphaFade = 1f;
-        alphaFade -= 1 * fadeSpeed * Time.deltaTime;
+        float alphaFade = texture.a;
+        alphaFade -= fadeSpeed * Time.deltaTime;
         alphaFade = Mathf.Clamp01(alphaFade);
         texture.a = alphaFade;
         screenImage.color = texture;
         yield return null;
+    }
+
+    public void StartFade()
+    {
+        fadeIn = true;
     }
 }

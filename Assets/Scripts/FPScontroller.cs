@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class FPScontroller : MonoBehaviour {
     [SerializeField]private MouseLook m_MouseLook;
     public GameObject Ui;
-
+    public ScreenFadeOnTeleport tpEffect;
     private Camera m_Camera;
     //private bool m_Jump;
     //private float m_YRotation;
@@ -72,6 +72,7 @@ public class FPScontroller : MonoBehaviour {
             //transform.position = transform.position + m_Camera.transform.forward;
             if (hit.transform.gameObject.GetComponent<TeleportTo>())
             {
+                tpEffect.StartFade();
                 transform.position = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
                 transform.parent = hit.transform;
             }
