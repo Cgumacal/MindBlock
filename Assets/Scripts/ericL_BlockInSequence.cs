@@ -21,13 +21,6 @@ public class ericL_BlockInSequence : MonoBehaviour {
 
 	public ericL_SequenceBlocks testOrder;
 
-	//Creates order of sequence from sibling script
-	void Start()
-	{
-		//Debug.Log ("tested");
-		//testOrder.createOrder ();
-	}
-
 	//Activates the item to begin sequence
 	void OnTriggerEnter()
 	{

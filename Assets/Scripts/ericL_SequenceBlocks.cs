@@ -70,7 +70,7 @@ public class ericL_SequenceBlocks : MonoBehaviour {
 
 		complete = true;
 
-		gameObject.SendMessage ("reward");
+		finishedEvent.SendMessage ("reward");
 	}
 
 }
