@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TeleportTrail : MonoBehaviour
 {
-
+    public Camera m_Camera;
     public void CreateCollider()
     {
         //Create collider along raycast
