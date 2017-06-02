@@ -74,6 +74,7 @@ public class FPScontroller : MonoBehaviour {
             {
                 transform.position = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
                 transform.parent = hit.transform;
+                //send thing activating teleport trail
             }
         }
     }
