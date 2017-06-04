@@ -20,6 +20,8 @@ public class FPScontroller : MonoBehaviour {
     //private float m_NextStep;
     //private bool m_Jumping;
     private AudioSource m_AudioSource;
+    private float horizontalSwipe;
+    public float swipeSensitivity = 3.0f;
 
     // Use this for initialization
     private void Start()
@@ -33,6 +35,11 @@ public class FPScontroller : MonoBehaviour {
         //m_NextStep = m_StepCycle / 2f;
         //m_Jumping = false;
         //m_AudioSource = GetComponent<AudioSource>();
+        m_MouseLook.Init(transform, m_Camera.transform);
+    }
+
+    private void ReInitMouseLook()
+    {
         m_MouseLook.Init(transform, m_Camera.transform);
     }
 
@@ -60,10 +67,25 @@ public class FPScontroller : MonoBehaviour {
 
     private void GetInput()
     {
-        
+        if (Input.GetButton("Tap"))
+        {
+            horizontalSwipe = Input.GetAxisRaw("Mouse X"); //swipe intensity
+            Debug.Log(horizontalSwipe);
+            if(horizontalSwipe >= swipeSensitivity)
+            {
+                transform.Rotate(0, 90, 0);
+                UpdateCameraPosition(0);
+                ReInitMouseLook();
+            }
+            if (horizontalSwipe <= -swipeSensitivity)
+            {
+                transform.Rotate(0, -90, 0);
+                UpdateCameraPosition(0);
+                ReInitMouseLook();
+            }
+        }
         if (Input.GetButtonUp("Tap"))
         {
-                     
             RaycastHit hit;
             //TeleportTo teleport;
             Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
