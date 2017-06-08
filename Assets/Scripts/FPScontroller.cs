@@ -38,10 +38,10 @@ public class FPScontroller : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-#if UNITY_EDITOR
-        RotateView();
-#endif
-        GetInput();
+        #if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
+            RotateView();
+        #endif
+            GetInput();
     }
 
     private void UpdateCameraPosition(float speed)
