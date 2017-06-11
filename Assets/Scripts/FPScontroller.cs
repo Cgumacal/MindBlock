@@ -24,7 +24,8 @@ public class FPScontroller : MonoBehaviour {
     private AudioSource m_AudioSource;
     private float horizontalSwipe;
     public float swipeSensitivity = 3.0f;
-
+    public bool oneSwipe = false;
+    private Vector3 currentAngle;
     // Use this for initialization
     private void Start()
     {
@@ -67,24 +68,40 @@ public class FPScontroller : MonoBehaviour {
         m_MouseLook.LookRotation(transform, m_Camera.transform);
     }
 
+    private IEnumerator rotate(float direction)
+    {
+        //this shit isn't smooth, fix it
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, new Quaternion(0, currentAngle.y + 90 * direction, 0, transform.rotation.w), Time.deltaTime * .1f);
+        yield return 0f;
+    }
+
     private void GetInput()
     {
+        if (Input.GetButtonDown("Tap")) //making sure we swivel only once per swipe
+        {
+            oneSwipe = true;
+        }
         if (Input.GetButton("Tap"))
         {
             horizontalSwipe = Input.GetAxisRaw("Mouse X"); //swipe intensity
-            Debug.Log(horizontalSwipe);
-            if(horizontalSwipe >= swipeSensitivity)
+            //Debug.Log(horizontalSwipe);
+            if(horizontalSwipe >= swipeSensitivity && oneSwipe)
             {
-                transform.Rotate(0, 90, 0);
+                oneSwipe = false;
+                currentAngle = transform.eulerAngles;
+                StartCoroutine(rotate(1));
                 UpdateCameraPosition(0);
                 ReInitMouseLook();
             }
-            if (horizontalSwipe <= -swipeSensitivity)
+            if (horizontalSwipe <= -swipeSensitivity && oneSwipe)
             {
-                transform.Rotate(0, -90, 0);
+                oneSwipe = false;
+                currentAngle = transform.eulerAngles;
+                StartCoroutine(rotate(-1));
                 UpdateCameraPosition(0);
                 ReInitMouseLook();
             }
+            Debug.Log(oneSwipe);
         }
         if (Input.GetButtonUp("Tap"))
         {
