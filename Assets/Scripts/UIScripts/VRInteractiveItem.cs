@@ -20,6 +20,7 @@ public class VRInteractiveItem : MonoBehaviour {
             if(currentStareLength >= stareDuration)
             {
                 this.gameObject.GetComponent<UnityEngine.UI.Button>().onClick.Invoke();
+                
             }
         }
     }
@@ -27,13 +28,13 @@ public class VRInteractiveItem : MonoBehaviour {
     public void Staring()
     {
         stared = true;
-        Debug.Log("aaaaaaaaaaaa");
-        //meter.Show();
+        meter.Show();
     }
     //stopped looking
     public void Out()
     {
         currentStareLength = 0.0f;
         stared = false;
+        meter.Hide();
     }
 }

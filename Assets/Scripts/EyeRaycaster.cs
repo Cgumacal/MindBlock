@@ -19,19 +19,30 @@ public class EyeRaycaster : MonoBehaviour {
         {
             VRInteractiveItem interactable = hit.collider.GetComponent<VRInteractiveItem>();
             mCurInteractible = interactable;
-            if (interactable && interactable != mLastInteractible)
+            if (interactable && interactable != mLastInteractible)//being looked at right now
             {
+                Debug.Log("COuNTING!!@#!@#!@#");
                 interactable.Staring();
+                mLastInteractible = mCurInteractible;
                 //hit.collider.gameObject.GetComponent<UnityEngine.UI.Button>().Select();
             }
             if(interactable != mLastInteractible)
             {
-
+                //do something here? probably useless shit
+                Debug.Log("stopped!!!@#!@");
+                mLastInteractible.Out();
+                mLastInteractible = null;
             }
+            
         }
         else
         {
-            //mLastInteractible.gameObject.GetComponent<UnityEngine.UI.Button>();
+            if (mLastInteractible != null)//we stopped looking at the thing
+            {
+                Debug.Log("stopped!!!@#!@");
+                mLastInteractible.Out();
+                mLastInteractible = null;
+            }
         }
 	}
     private void DeactiveLastInteractible()
