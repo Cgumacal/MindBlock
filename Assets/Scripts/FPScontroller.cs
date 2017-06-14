@@ -71,8 +71,7 @@ public class FPScontroller : MonoBehaviour {
     private IEnumerator rotate(float direction)
     {
         //this shit isn't smooth, fix it
-        Debug.Log("ROTATED");
-        transform.Rotate(0, 90 * direction, 0);//Quaternion.RotateTowards(transform.rotation, new Quaternion(0, currentAngle.y + 90 * direction, 0, transform.rotation.w), Time.deltaTime * .1f);
+        transform.Rotate(0, 90 * direction, 0);
         yield return 0f;
     }
 
