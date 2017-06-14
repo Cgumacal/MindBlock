@@ -21,15 +21,16 @@ public class EyeRaycaster : MonoBehaviour {
             mCurInteractible = interactable;
             if (interactable && interactable != mLastInteractible)//being looked at right now
             {
-                Debug.Log("COuNTING!!@#!@#!@#");
                 interactable.Staring();
+                if(mLastInteractible != null)
+                {
+                    mLastInteractible.Out();
+                }
                 mLastInteractible = mCurInteractible;
                 //hit.collider.gameObject.GetComponent<UnityEngine.UI.Button>().Select();
             }
-            if(interactable != mLastInteractible)
+            if (interactable != mLastInteractible)//deactivate the last one
             {
-                //do something here? probably useless shit
-                Debug.Log("stopped!!!@#!@");
                 mLastInteractible.Out();
                 mLastInteractible = null;
             }
@@ -39,18 +40,9 @@ public class EyeRaycaster : MonoBehaviour {
         {
             if (mLastInteractible != null)//we stopped looking at the thing
             {
-                Debug.Log("stopped!!!@#!@");
                 mLastInteractible.Out();
                 mLastInteractible = null;
             }
         }
 	}
-    private void DeactiveLastInteractible()
-    {
-        if (mLastInteractible == null)
-            return;
-
-        mLastInteractible.Out();
-        mLastInteractible = null;
-    }
 }

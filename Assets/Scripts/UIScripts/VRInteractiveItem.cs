@@ -15,7 +15,6 @@ public class VRInteractiveItem : MonoBehaviour {
     {
         if (stared)
         {
-            
             currentStareLength += Time.deltaTime;
             if(currentStareLength >= stareDuration)
             {
