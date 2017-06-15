@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1CA36A1A-5777-4070-ACE9-920DF4190DD9}" SchemaVersion="75">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{1CA36A1A-5777-4070-ACE9-920DF4190DD9}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Test Duck" ID="{F9F01834-127B-432B-8A75-F96475984786}" ShortID="71702870" Type="SoundFX">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9A682907-FBC6-4750-A60C-DFC3470E32BB}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Test Duck" ID="{111BAA51-ADDA-4CC1-A731-8854E974EBDE}" ShortID="102765051">
+							<Language>SFX</Language>
+							<AudioFile>Test Duck.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Test Duck" ID="{111BAA51-ADDA-4CC1-A731-8854E974EBDE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
