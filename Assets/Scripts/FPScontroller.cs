@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class FPScontroller : MonoBehaviour {
-    [SerializeField]private MouseLook m_MouseLook;
+	//ericL - I made this public in order to access MouseLook through the pause menu script, needed to unlock the cursor when in the pause menu
+	//        if this breaks code in any way, feel free to remove it and let me know. Currently, ericL_PauseMenu.cs needs this to unlock the mouse
+    [SerializeField]public MouseLook m_MouseLook;
     public GameObject Ui;
     public ScreenFadeOnTeleport tpEffect;
     private Camera m_Camera;
