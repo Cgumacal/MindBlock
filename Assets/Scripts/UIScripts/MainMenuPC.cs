@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class MainMenuPC : MonoBehaviour {
+public class MainMenuPC : MonoBehaviour, Button {
     
 	// Use this for initialization
 	void Start () {
@@ -20,5 +22,10 @@ public class MainMenuPC : MonoBehaviour {
     public void exitGame()
     {
         Application.Quit();
+    }
+
+    public void Activate()
+    {
+        
     }
 }

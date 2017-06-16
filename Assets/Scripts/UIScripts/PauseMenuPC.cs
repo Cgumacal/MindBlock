@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class PauseMenuPC : MonoBehaviour {
+public class PauseMenuPC : MonoBehaviour, Button {
     public GameObject pauseMenu;
     public FPScontroller firstPersonCont;
+    public string LevelToLoad;
     private bool isPaused;
 	// Use this for initialization
 	void Start () {
@@ -21,7 +23,7 @@ public class PauseMenuPC : MonoBehaviour {
         if (isPaused)
         {
             Cursor.visible = true;
-            firstPersonCont.enabled = false;
+            //firstPersonCont.enabled = false;
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
         }
@@ -39,5 +41,10 @@ public class PauseMenuPC : MonoBehaviour {
         if (Time.timeScale == 0)
             Time.timeScale = 1;
         SceneManager.LoadScene(str);
+    }
+
+    public void Activate()
+    {
+        this.gameObject.GetComponent<UnityEngine.UI.Button>().onClick.Invoke();
     }
 }

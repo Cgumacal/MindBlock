@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1768888818	Play_Test_Duck			\Default Work Unit\Play_Test_Duck	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	102765051	Test Duck	C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\.cache\Mac\SFX\Test Duck_9E69E797.wem		\Actor-Mixer Hierarchy\Default Work Unit\Test Duck		112348
+
