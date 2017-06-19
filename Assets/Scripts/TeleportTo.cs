@@ -27,12 +27,12 @@ public class TeleportTo : MonoBehaviour {
     {
 		//if the distance between point a and point b is greater than the set max
 		//dont allow a teleport
-		float distance = Vector3.Distance (transform.position, m_Player.transform.parent.transform.position);
+		//float distance = Vector3.Distance (transform.position, m_Player.transform.parent.transform.position);
 
-		if (distance > maxTeleRadius) 
+		/*if (distance > maxTeleRadius) 
 		{
 			return m_Player.transform.parent.transform.position;
-		}
+		}*/
 			
 		//else teleport
 		return transform.position;
