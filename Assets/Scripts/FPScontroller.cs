@@ -111,13 +111,17 @@ public class FPScontroller : MonoBehaviour {
             Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.forward, Color.red, 1000);
             //Debug.Log(hit.transform.name);
             //transform.position = transform.position + m_Camera.transform.forward;
-            if (hit.transform.gameObject.GetComponent<TeleportTo>())
+            if(hit.collider != null)
             {
-                tpEffect.StartFade();
-                transform.position = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
-                transform.parent = hit.transform;
-                //send thing activating teleport trail
+                if (hit.transform.gameObject.GetComponent<TeleportTo>())
+                {
+                    tpEffect.StartFade();
+                    transform.position = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
+                    transform.parent = hit.transform;
+                    //send thing activating teleport trail
+                }
             }
+            
         }
     }
 }
