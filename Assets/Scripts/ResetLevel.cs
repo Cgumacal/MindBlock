@@ -14,7 +14,7 @@ public class ResetLevel : MonoBehaviour {
 	void Update () {
 		if(transform.position.y < resetHeight)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+			LevelManager.ResetLevel();
         }
 	}
 }
