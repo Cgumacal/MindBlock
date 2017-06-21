@@ -7,6 +7,7 @@ public class FPScontroller : MonoBehaviour {
 	//ericL - I made this public in order to access MouseLook through the pause menu script, needed to unlock the cursor when in the pause menu
 	//        if this breaks code in any way, feel free to remove it and let me know. Currently, ericL_PauseMenu.cs needs this to unlock the mouse
     [SerializeField]public MouseLook m_MouseLook;
+    
     public GameObject Ui;
     public ScreenFadeOnTeleport tpEffect;
     private Camera m_Camera;
@@ -37,8 +38,9 @@ public class FPScontroller : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        #if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
-            RotateView();
+        //Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.forward, Color.red, 1000);
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
+        RotateView();
         #endif
             GetInput();
     }
@@ -96,12 +98,12 @@ public class FPScontroller : MonoBehaviour {
         {
             RaycastHit hit;
             Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
-            Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.forward, Color.red, 1000);
+            
 
             if (hit.transform.gameObject.GetComponent<TeleportTo>())
             {
                 Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
-                if(teleportTo.y <= transform.position.y+1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport)
+                if(teleportTo.y <= transform.position.y+1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum())
                 {
                     tpEffect.StartFade();
                     transform.position = teleportTo;
