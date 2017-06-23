@@ -98,8 +98,9 @@ public class FPScontroller : MonoBehaviour {
         {
             RaycastHit hit;
             Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
-            
 
+            
+            if(hit.collider != null){
             if (hit.transform.gameObject.GetComponent<TeleportTo>())
             {
                 Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
@@ -111,6 +112,7 @@ public class FPScontroller : MonoBehaviour {
                 }
                 //send thing activating teleport trail
             }
+            
         }
     }
 
