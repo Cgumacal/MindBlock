@@ -6,6 +6,7 @@ public class ericL_Swappable : MonoBehaviour {
 
 	public bool canSwap;
 	public bool alwaysSwappable;
+	public bool neverSwap;
 
 	void Start()
 	{
@@ -19,7 +20,7 @@ public class ericL_Swappable : MonoBehaviour {
 
 	public void NoSwap()
 	{
-		if (!alwaysSwappable) 
+		if (!alwaysSwappable || neverSwap) 
 		{
 			canSwap = false;
 		} 
@@ -29,6 +30,11 @@ public class ericL_Swappable : MonoBehaviour {
 
 	public void AllowSwap()
 	{
-		canSwap = true;
+		if (!neverSwap) 
+		{
+			canSwap = true;
+		} 
+		else
+			canSwap = false;
 	}
 }
