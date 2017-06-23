@@ -5,13 +5,20 @@ using UnityEngine;
 public class TeleportTo : MonoBehaviour {
     private Camera m_Player = null;
 
-	//float value to limit the maximum amount of spaces the player can teleport from
-	//       fyi - block distance (standard) is .5 x y and z
-	public float maxTeleRadius;
+    //float value to limit the maximum amount of spaces the player can teleport from
+    //       fyi - block distance (standard) is .5 x y and z
+    //public float maxTeleRadius;
+
+    //borderNum is the integer that will check if the player can teleport to this block from another block
+    //player can only teleport to a block that has the same borderNum as the block they are standing on 
+    //default borderNum = 0 then for every border block increment the number by 1 the border crossing block 
+    //will be the one to change this. 
+    [SerializeField]private int borderNum = 0;
+            
 
 	// Use this for initialization
 	void Start () {
-		maxTeleRadius = 3f;
+		//maxTeleRadius = 3f;
         while (m_Player == null)
         {
             m_Player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>();
@@ -36,5 +43,15 @@ public class TeleportTo : MonoBehaviour {
 			
 		//else teleport
 		return transform.position;
+    }
+
+    public void setBorderNum(int num)
+    {
+        borderNum = num;
+    }
+
+    public int getBorderNum()
+    {
+        return borderNum;
     }
 }
