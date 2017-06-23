@@ -43,23 +43,30 @@ public class ericL_SwapAbility : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.LeftControl)) 
 		{
+			Debug.Log ("CLEARED SWITCHABLE BLOCKS");
 			blockToSwitch = null;
 			blockSwitchWith = null;
 		}
 
 		LookAtBlock ();
-		SwitchBlocks ();
+
+		if(blockToSwitch != null && blockSwitchWith != null)
+			SwitchBlocks ();
 	}
 
 
 	//uses raycast to sense block that player is looking at
 	public void LookAtBlock()
 	{
+		bool swap = false;
+
 		if (Physics.Raycast (player.transform.position, player.transform.forward, out hit)) 
 		{
-			Debug.Log ("hit");
-			if (hit.transform.CompareTag ("SwitchableBlock"))
+			ericL_Swappable canSwap = hit.transform.GetComponent<ericL_Swappable>();
+
+			if (canSwap != null)//(hit.transform.CompareTag ("SwitchableBlock"))
 			{
+				swap = canSwap.GetCanSwap();
 				Debug.Log ("COUNT STARTED");
 				startCount = true;
 			}
@@ -73,7 +80,7 @@ public class ericL_SwapAbility : MonoBehaviour {
 
 		if (count <= 0) 
 		{
-			Debug.Log ("SWITCH AVAILABLE");
+			Debug.Log ("CAN ATTEMPT SWITCH");
 			canSelectSwitch = true;
 		}
 
@@ -86,13 +93,20 @@ public class ericL_SwapAbility : MonoBehaviour {
 		{
 			if (Input.GetMouseButtonDown (1)) 
 			{
-				Debug.Log ("ADDED");
-				if (blockToSwitch == null) 
+				if (swap)
 				{
-					blockToSwitch = hit.transform.gameObject;
+					Debug.Log ("ADDED");
+					if (blockToSwitch == null)
+					{
+						blockToSwitch = hit.transform.gameObject;
+					} 
+					else
+						blockSwitchWith = hit.transform.gameObject;
+				} 
+				else if (!swap) 
+				{
+					Debug.Log ("HOW DARE YOU TRY TO SWAP ME");
 				}
-				else
-					blockSwitchWith = hit.transform.gameObject;
 			}
 		}
 	}
