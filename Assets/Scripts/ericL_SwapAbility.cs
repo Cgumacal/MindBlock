@@ -59,16 +59,23 @@ public class ericL_SwapAbility : MonoBehaviour {
 	public void LookAtBlock()
 	{
 		bool swap = false;
+		bool needsParent = false;
 
 		if (Physics.Raycast (player.transform.position, player.transform.forward, out hit)) 
 		{
 			ericL_Swappable canSwap = hit.transform.GetComponent<ericL_Swappable>();
-
+			MovingCube isMoving = hit.transform.GetComponent<MovingCube> ();
+				
 			if (canSwap != null)//(hit.transform.CompareTag ("SwitchableBlock"))
 			{
 				swap = canSwap.GetCanSwap();
 				Debug.Log ("COUNT STARTED");
 				startCount = true;
+
+				if (isMoving != null) 
+				{
+					needsParent = true;
+				}
 			}
 		} 
 		else 
@@ -96,12 +103,25 @@ public class ericL_SwapAbility : MonoBehaviour {
 				if (swap)
 				{
 					Debug.Log ("ADDED");
-					if (blockToSwitch == null)
+
+					if (needsParent) 
 					{
-						blockToSwitch = hit.transform.gameObject;
-					} 
+						if (blockToSwitch == null) 
+						{
+							blockToSwitch = hit.transform.parent.gameObject;
+						} 
+						else
+							blockSwitchWith = hit.transform.parent.gameObject;
+					}
 					else
-						blockSwitchWith = hit.transform.gameObject;
+					{
+						if (blockToSwitch == null)
+						{
+							blockToSwitch = hit.transform.gameObject;
+						} 
+						else
+							blockSwitchWith = hit.transform.gameObject;
+					}
 				} 
 				else if (!swap) 
 				{
