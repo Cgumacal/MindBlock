@@ -101,17 +101,18 @@ public class FPScontroller : MonoBehaviour {
 
             
             if(hit.collider != null){
-            if (hit.transform.gameObject.GetComponent<TeleportTo>())
-            {
-                Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
-                if(teleportTo.y <= transform.position.y+1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum())
-                {
-                    tpEffect.StartFade();
-                    transform.position = teleportTo;
-                    transform.parent = hit.transform;
-                }
-                //send thing activating teleport trail
-            }
+	            if (hit.transform.gameObject.GetComponent<TeleportTo>())
+	            {
+	                Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
+	                if(teleportTo.y <= transform.position.y+1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum())
+	                {
+	                    tpEffect.StartFade();
+	                    transform.position = teleportTo;
+	                    transform.parent = hit.transform;
+	                }
+	                //send thing activating teleport trail
+	            }
+			}
             
         }
     }

@@ -9,17 +9,13 @@ public class CheckpointBlock : MonoBehaviour {
 	void Start () {
 		globalControl = FindObjectOfType<GlobalControl> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+	// Update checkpoint location when player enters checkpoint block
 	void OnTriggerEnter(Collider col) 
 	{
 		if (col.CompareTag ("Player")) 
 		{
-			globalControl._currCheckpointLocation = transform.position;
+			globalControl.currCheckpointLocation = transform.position;
 		}
 	}
 
