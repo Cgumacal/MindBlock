@@ -99,20 +99,21 @@ public class FPScontroller : MonoBehaviour {
             RaycastHit hit;
             Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
 
-            
-            if(hit.collider != null){
-            if (hit.transform.gameObject.GetComponent<TeleportTo>())
+
+            if (hit.collider != null)
             {
-                Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
-                if(teleportTo.y <= transform.position.y+1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum())
+                if (hit.transform.gameObject.GetComponent<TeleportTo>())
                 {
-                    tpEffect.StartFade();
-                    transform.position = teleportTo;
-                    transform.parent = hit.transform;
+                    Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
+                    if (teleportTo.y <= transform.position.y + 1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum())
+                    {
+                        tpEffect.StartFade();
+                        transform.position = teleportTo;
+                        transform.parent = hit.transform;
+                    }
+                    //send thing activating teleport trail
                 }
-                //send thing activating teleport trail
             }
-            
         }
     }
 
