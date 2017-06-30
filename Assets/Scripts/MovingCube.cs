@@ -6,6 +6,7 @@ public class MovingCube : MonoBehaviour {
     [SerializeField] private Transform Endpoint1;
     [SerializeField] private Transform Endpoint2;
     [SerializeField] private float MoveSpeed = 0.5f;
+    public bool canMove = true;
     private Vector3 Target;
     // Use this for initialization
     void Start () {
@@ -16,8 +17,11 @@ public class MovingCube : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = Vector3.MoveTowards(transform.position, Target, MoveSpeed * Time.deltaTime);
-        ChangeTarget();
+        if (canMove)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, Target, MoveSpeed * Time.deltaTime);
+            ChangeTarget();
+        }
 	}
 
     void ChangeTarget()
