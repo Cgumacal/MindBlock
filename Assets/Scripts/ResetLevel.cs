@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ResetLevel : MonoBehaviour {
     [SerializeField] private float resetHeight = -2f;
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,6 +17,7 @@ public class ResetLevel : MonoBehaviour {
 		if(transform.position.y < resetHeight)
         {
 			LevelManager.ResetLevel();
+
         }
 	}
 }
