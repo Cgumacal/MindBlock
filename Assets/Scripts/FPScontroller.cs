@@ -42,7 +42,7 @@ public class FPScontroller : MonoBehaviour {
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_STANDALONE_OSX
         RotateView();
         #endif
-            GetInput();
+        GetInput();
     }
 
     private void UpdateCameraPosition(float speed)
@@ -68,51 +68,71 @@ public class FPScontroller : MonoBehaviour {
 
     private void GetInput()
     {
-        if (Input.GetButtonDown("Tap")) //making sure we swivel only once per swipe
+        if (!Ui.active)//check if game is paused
         {
-            oneSwipe = true;
-        }
-        if (Input.GetButton("Tap"))
-        {
-            horizontalSwipe = Input.GetAxisRaw("Mouse X"); //swipe intensity
-            //Debug.Log(horizontalSwipe);
-            if(horizontalSwipe >= swipeSensitivity && oneSwipe)
+            if (Input.GetButtonDown("Tap")) //making sure we swivel only once per swipe
             {
-                oneSwipe = false;
-                currentAngle = transform.eulerAngles;
-                StartCoroutine(rotate(1));
-                UpdateCameraPosition(0);
-                ReInitMouseLook();
+                oneSwipe = true;
             }
-            if (horizontalSwipe <= -swipeSensitivity && oneSwipe)
+            if (Input.GetButton("Tap"))
             {
-                oneSwipe = false;
-                currentAngle = transform.eulerAngles;
-                StartCoroutine(rotate(-1));
-                UpdateCameraPosition(0);
-                ReInitMouseLook();
-            }
-            Debug.Log(oneSwipe);
-        }
-        if (Input.GetButtonUp("Tap"))
-        {
-            RaycastHit hit;
-            Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
-
-
-            if (hit.collider != null)
-            {
-                if (hit.transform.gameObject.GetComponent<TeleportTo>())
+                horizontalSwipe = Input.GetAxisRaw("Mouse X"); //swipe intensity
+                                                               //Debug.Log(horizontalSwipe);
+                if (horizontalSwipe >= swipeSensitivity && oneSwipe)
                 {
-                    Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();
-                    if (teleportTo.y <= transform.position.y + 1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum())
-                    {
-                        tpEffect.StartFade();
-                        transform.position = teleportTo;
-                        transform.parent = hit.transform;
-                    }
-                    //send thing activating teleport trail
+                    oneSwipe = false;
+                    currentAngle = transform.eulerAngles;
+                    StartCoroutine(rotate(1));
+                    UpdateCameraPosition(0);
+                    ReInitMouseLook();
                 }
+                if (horizontalSwipe <= -swipeSensitivity && oneSwipe)
+                {
+                    oneSwipe = false;
+                    currentAngle = transform.eulerAngles;
+                    StartCoroutine(rotate(-1));
+                    UpdateCameraPosition(0);
+                    ReInitMouseLook();
+                }
+                Debug.Log(oneSwipe);
+            }
+            if (Input.GetButtonUp("Tap"))
+            {
+                RaycastHit hit;
+                Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
+
+                if (hit.collider != null)//if the raycast hits something
+                {
+                    if (hit.transform == transform.parent && !hit.transform.gameObject.GetComponent<TeleportBlock>())//check if the block that you are looking at is the one you are standing on
+                    {
+                        hit.transform.gameObject.SendMessage("Activate");//if it is then send a message to that game object to use the gameObjects Activate() Function this will be to activate triggers
+                    }
+                    else if (hit.transform.gameObject.GetComponent<TeleportTo>())//if it is not the same block as you are currently standing on check for a teleport script
+                    {
+                        Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();//get the transform for the block you are trying to teleport to 
+                        bool TP_Block = hit.transform.gameObject.GetComponent<TeleportBlock>();
+                        if (teleportTo.y <= transform.position.y + 1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum() || TP_Block)
+                        {// if it is below the teleport height, and is within the max distance of the teleport and as teleportable through borders
+                            tpEffect.StartFade();//activate teleport fade
+                            transform.position = teleportTo;//change position of player
+                            transform.parent = hit.transform;//change the parent of the player to the current block 
+                        }
+                        //send thing activating teleport trail
+                    }
+                }
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (!Ui.active) { 
+                Ui.SetActive(true);
+                Ui.transform.position = m_Camera.transform.position + m_Camera.transform.forward * 1.5f;
+                Ui.transform.rotation = m_Camera.transform.rotation;
+            }
+            else
+            {
+                Ui.SetActive(false);
+                
             }
         }
     }

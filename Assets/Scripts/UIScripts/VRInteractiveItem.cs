@@ -11,12 +11,12 @@ public class VRInteractiveItem : MonoBehaviour {
     public bool stared = false;
     public SelectionMeter meter;
 
-    void Update()
+    public virtual void Update()
     {
         if (stared)
         {
             currentStareLength += Time.deltaTime;
-            if(currentStareLength >= stareDuration)
+            if(currentStareLength >= stareDuration || Input.GetButtonUp("Tap"))
             {
                 this.gameObject.GetComponent<UnityEngine.UI.Button>().onClick.Invoke();
                 
