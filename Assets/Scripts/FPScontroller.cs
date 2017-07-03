@@ -103,7 +103,7 @@ public class FPScontroller : MonoBehaviour {
 
                 if (hit.collider != null)//if the raycast hits something
                 {
-                    if (hit.transform == transform.parent)//check if the block that you are looking at is the one you are standing on
+                    if (hit.transform == transform.parent && !hit.transform.gameObject.GetComponent<TeleportBlock>())//check if the block that you are looking at is the one you are standing on
                     {
                         hit.transform.gameObject.SendMessage("Activate");//if it is then send a message to that game object to use the gameObjects Activate() Function this will be to activate triggers
                     }
