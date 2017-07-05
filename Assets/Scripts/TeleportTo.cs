@@ -30,7 +30,7 @@ public class TeleportTo : MonoBehaviour {
 		
 	}
 
-    public Vector3 Teleport()
+    public virtual Vector3 Teleport()
     {
 		//if the distance between point a and point b is greater than the set max
 		//dont allow a teleport

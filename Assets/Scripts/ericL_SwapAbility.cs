@@ -41,12 +41,19 @@ public class ericL_SwapAbility : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		/*
+		 * 
+		 * ADDS CLEAR FEATURE
+		 * 
+		 * 
 		if (Input.GetKeyDown (KeyCode.LeftControl)) 
 		{
 			Debug.Log ("CLEARED SWITCHABLE BLOCKS");
 			blockToSwitch = null;
 			blockSwitchWith = null;
 		}
+		*/
 
 		LookAtBlock ();
 
@@ -66,7 +73,7 @@ public class ericL_SwapAbility : MonoBehaviour {
 			ericL_Swappable canSwap = hit.transform.GetComponent<ericL_Swappable>();
 			MovingCube isMoving = hit.transform.GetComponent<MovingCube> ();
 				
-			if (canSwap != null)//(hit.transform.CompareTag ("SwitchableBlock"))
+			if (canSwap != null)
 			{
 				swap = canSwap.GetCanSwap();
 				Debug.Log ("COUNT STARTED");
@@ -104,6 +111,7 @@ public class ericL_SwapAbility : MonoBehaviour {
 				{
 					Debug.Log ("ADDED");
 
+					//for swapping blocks set under a parent
 					if (needsParent) 
 					{
 						if (blockToSwitch == null) 
@@ -113,6 +121,7 @@ public class ericL_SwapAbility : MonoBehaviour {
 						else
 							blockSwitchWith = hit.transform.parent.gameObject;
 					}
+					//for swapping normal blocks
 					else
 					{
 						if (blockToSwitch == null)
@@ -136,6 +145,7 @@ public class ericL_SwapAbility : MonoBehaviour {
 	{
 		var temp = blockToSwitch.transform.position;
 
+		//swaps and sets swap blocks back to null
 		if (blockToSwitch != null && blockSwitchWith != null) 
 		{
 			blockToSwitch.transform.position = blockSwitchWith.transform.position;

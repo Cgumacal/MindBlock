@@ -60,7 +60,7 @@ public class GlobalControl : MonoBehaviour {
 
 	public bool sceneHasChanged ()
 	{
-		return !_prevSceneName.Equals(_newSceneName);
+		return !string.Equals(_prevSceneName,_newSceneName);
 	}
 
 
