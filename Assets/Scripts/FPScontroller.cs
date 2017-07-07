@@ -142,6 +142,11 @@ public class FPScontroller : MonoBehaviour {
         maxTeleport = distance;
     }
 
+	public float getMaxTeleport()
+	{
+		return maxTeleport;
+	}
+
     public void resetTeleportDistance()
     {
         maxTeleport = defaultMaxTeleport;
