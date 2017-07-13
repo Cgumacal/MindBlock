@@ -10,8 +10,10 @@ public class GlobalControl : MonoBehaviour {
 
 	private static GlobalControl Instance;	// Singleton instance of this object
 
-	public Vector3 currCheckpointLocation;	// Location of most recent checkpoint player activated
-	private string _prevSceneName;			// Previous scene loaded	
+	public string checkpointBlockName;
+	[SerializeField]
+	private string _prevSceneName;			// Previous scene loaded
+	[SerializeField]
 	private string _newSceneName;			// Current scene loaded
 
 	void Awake ()   
@@ -27,13 +29,8 @@ public class GlobalControl : MonoBehaviour {
 			Destroy (gameObject);
 		}
 		// Debug.Log ("Should only happen once");
-	}
 
-	void Start() 
-	{
-		// Find the start block and set it as the checkpoint position for the player
-		currCheckpointLocation = FindObjectOfType<StartBlock> ().transform.position;
-	
+		checkpointBlockName = FindObjectOfType<StartBlock> ().name;
 		_prevSceneName = "";
 		_newSceneName = "";
 	}
