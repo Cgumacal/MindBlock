@@ -41,27 +41,48 @@ public class ericL_SwapAbility : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		/*
+		 * 
+		 * ADDS CLEAR FEATURE
+		 * 
+		 * 
 		if (Input.GetKeyDown (KeyCode.LeftControl)) 
 		{
+			Debug.Log ("CLEARED SWITCHABLE BLOCKS");
 			blockToSwitch = null;
 			blockSwitchWith = null;
 		}
+		*/
 
 		LookAtBlock ();
-		SwitchBlocks ();
+
+		if(blockToSwitch != null && blockSwitchWith != null)
+			SwitchBlocks ();
 	}
 
 
 	//uses raycast to sense block that player is looking at
 	public void LookAtBlock()
 	{
+		bool swap = false;
+		bool needsParent = false;
+
 		if (Physics.Raycast (player.transform.position, player.transform.forward, out hit)) 
 		{
-			Debug.Log ("hit");
-			if (hit.transform.CompareTag ("SwitchableBlock"))
+			ericL_Swappable canSwap = hit.transform.GetComponent<ericL_Swappable>();
+			MovingCube isMoving = hit.transform.GetComponent<MovingCube> ();
+				
+			if (canSwap != null)
 			{
+				swap = canSwap.GetCanSwap();
 				Debug.Log ("COUNT STARTED");
 				startCount = true;
+
+				if (isMoving != null) 
+				{
+					needsParent = true;
+				}
 			}
 		} 
 		else 
@@ -73,7 +94,7 @@ public class ericL_SwapAbility : MonoBehaviour {
 
 		if (count <= 0) 
 		{
-			Debug.Log ("SWITCH AVAILABLE");
+			Debug.Log ("CAN ATTEMPT SWITCH");
 			canSelectSwitch = true;
 		}
 
@@ -86,13 +107,35 @@ public class ericL_SwapAbility : MonoBehaviour {
 		{
 			if (Input.GetMouseButtonDown (1)) 
 			{
-				Debug.Log ("ADDED");
-				if (blockToSwitch == null) 
+				if (swap)
 				{
-					blockToSwitch = hit.transform.gameObject;
+					Debug.Log ("ADDED");
+
+					//for swapping blocks set under a parent
+					if (needsParent) 
+					{
+						if (blockToSwitch == null) 
+						{
+							blockToSwitch = hit.transform.parent.gameObject;
+						} 
+						else
+							blockSwitchWith = hit.transform.parent.gameObject;
+					}
+					//for swapping normal blocks
+					else
+					{
+						if (blockToSwitch == null)
+						{
+							blockToSwitch = hit.transform.gameObject;
+						} 
+						else
+							blockSwitchWith = hit.transform.gameObject;
+					}
+				} 
+				else if (!swap) 
+				{
+					Debug.Log ("HOW DARE YOU TRY TO SWAP ME");
 				}
-				else
-					blockSwitchWith = hit.transform.gameObject;
 			}
 		}
 	}
@@ -102,6 +145,7 @@ public class ericL_SwapAbility : MonoBehaviour {
 	{
 		var temp = blockToSwitch.transform.position;
 
+		//swaps and sets swap blocks back to null
 		if (blockToSwitch != null && blockSwitchWith != null) 
 		{
 			blockToSwitch.transform.position = blockSwitchWith.transform.position;

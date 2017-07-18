@@ -22,11 +22,14 @@ public class ericL_BlockInSequence : MonoBehaviour {
 	public ericL_SequenceBlocks testOrder;
 
 	//Activates the item to begin sequence
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider col)
 	{
-		isTriggered = true;
-		//Tests trigger order
-		testOrder.testOrder ();
+		if (col.transform.tag == "Player") 
+		{
+			isTriggered = true;
+			//Tests trigger order
+			testOrder.testOrder ();
+		}
 	}
 
 	//Changes the value of item to activate to false (to reset search for sequence)
