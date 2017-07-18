@@ -15,7 +15,7 @@ public class CheckpointBlock : MonoBehaviour {
 	{
 		if (col.CompareTag ("Player")) 
 		{
-			globalControl.currCheckpointLocation = transform.position;
+			globalControl.checkpointBlockName = transform.name;
 		}
 	}
 
