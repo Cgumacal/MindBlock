@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EndBlock : MonoBehaviour {
-
+    public bool positive = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,12 +11,16 @@ public class EndBlock : MonoBehaviour {
 	void Update () {
 		
 	}
-    
-    void OnTriggerEnter(Collider col)
-    {
-        if(col.transform.tag == "Player")
-        {
+
+    void OnTriggerEnter(Collider col) {
+        if (col.transform.tag == "Player") {
             Debug.Log("Win");
+            if (positive) {
+                AkSoundEngine.PostEvent("Play_Test_Duck", gameObject);
+            }
+            else {
+                AkSoundEngine.PostEvent("Play_Test_Duck", gameObject);
+            }
         }
     }
 }
