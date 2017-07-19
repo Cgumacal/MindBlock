@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class EndBlock : MonoBehaviour {
 
+    private GameObject player;
+
 	// Use this for initialization
 	void Start () {
-		
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,7 @@ public class EndBlock : MonoBehaviour {
         if(col.transform.tag == "Player")
         {
             Debug.Log("Win");
+            player.GetComponent<FPScontroller>().LevelComplete();
         }
     }
 }
