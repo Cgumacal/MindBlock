@@ -189,6 +189,7 @@ public class FPScontroller : MonoBehaviour {
                                 tpEffect.StartFade();//activate teleport fade
                                 transform.position = teleportTo;//change position of player
                                 transform.parent = hit.transform;//change the parent of the player to the current block 
+                                AkSoundEngine.PostEvent("Play_Test_Duck", gameObject);
                             }
                             //send thing activating teleport trail
                         }
