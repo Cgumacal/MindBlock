@@ -4,22 +4,31 @@ public class EndBlock : MonoBehaviour {
     public bool positive = false;
 	// Use this for initialization
 	void Start () {
-		
+        if (!positive) {
+            gameObject.GetComponent<Renderer>().material.SetColor("Standard", Color.red);
+        }
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     void OnTriggerEnter(Collider col) {
         if (col.transform.tag == "Player") {
             Debug.Log("Win");
+            PlayerScore scorer = col.gameObject.GetComponent<PlayerScore>();
+            //this is a positive ending
             if (positive) {
-                AkSoundEngine.PostEvent("Play_Test_Duck", gameObject);
+                scorer.MakePositiveChoice();
             }
+            //a negative ending
             else {
-                AkSoundEngine.PostEvent("Play_Test_Duck", gameObject);
+                scorer.MakeNegativeChoice();
+            }
+
+            //we are a paragon of society
+            if(scorer.pScore >= 3){
+                AkSoundEngine.PostEvent("PLACEHOLDER_NAME_FOR_POSITIVE_RESPONSES", gameObject);
+            }
+            //we hate this
+            if(scorer.pScore <= -3) {
+                AkSoundEngine.PostEvent("PLACEHOLDER_NAME_FOR_NEGATIVE_RESPONSES", gameObject);
             }
         }
     }
