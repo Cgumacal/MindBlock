@@ -114,36 +114,29 @@ public class FPScontroller : MonoBehaviour {
 	{
 		RaycastHit hit;
 		Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
-		blockIdentificationText.text = "Nothing";
+
+		blockIdentificationText.text = "";
 		if (hit.collider != null) //if the raycast hits something
 		{
 			GameObject block = hit.transform.gameObject;
 			if (block.GetComponent<ericL_Swappable> () != null) // The block is swappable 
 			{
 				if (block.name.Contains ("AI Rights Block")) {
-					Debug.Log ("AI Rights Block");
 					blockIdentificationText.text = "AI Rights Block";
 				} else if (block.name.Contains ("Death Block")) {
-					Debug.Log ("Death Block");
 					blockIdentificationText.text = "Death Block";
 				} else if (block.name.Contains ("Falling Cube")) {
-					Debug.Log ("Falling Cube");
 					blockIdentificationText.text = "Falling Cube";
 				} else if (block.name.Contains ("Motivational Cube")) {
-					Debug.Log ("Motivational Cube");
 					blockIdentificationText.text = "Motivational Cube";
 				} else if (block.name.Contains ("Standard Cube")) {
-					Debug.Log ("Standard Cube");
-					blockIdentificationText.text = "Standard Cubek";
+					blockIdentificationText.text = "Standard Cube";
 				} else if (block.name.Contains ("PopoutBlock")) {
-					Debug.Log ("Popout Block");
-					blockIdentificationText.text = "PopoutBlock";
+					blockIdentificationText.text = "Popout Block";
 				} else if (block.name.Contains ("GlassBlock")) {
-					Debug.Log ("Glass Block");
-					blockIdentificationText.text = "GlassBlock";
+					blockIdentificationText.text = "Glass Block";
 				} else {
-					Debug.Log ("This block is not listed in FPSController.DisplayBlockType()");
-					blockIdentificationText.text = "This block is not listed in FPSController.DisplayBlockType()";
+					blockIdentificationText.text = "This block is not listed";
 				}
 
 			}
