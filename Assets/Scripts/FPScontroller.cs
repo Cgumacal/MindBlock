@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class FPScontroller : MonoBehaviour {
@@ -24,6 +25,7 @@ public class FPScontroller : MonoBehaviour {
     private bool levelEnd = false;
     RaycastHit hit;
     private float swapDistance = 3f;
+	[SerializeField] private Text blockIdentificationText;
 
     private GameObject storedBlock;
     private float buttonDownTime;
@@ -57,6 +59,7 @@ public class FPScontroller : MonoBehaviour {
 
         if (!levelEnd)
         {
+			DisplaySwappableBlockType ();
             ChangeBlockColor();
             GetInput();
         }
@@ -105,6 +108,46 @@ public class FPScontroller : MonoBehaviour {
 			}
 		}
 
+	}
+
+	private void DisplaySwappableBlockType() 
+	{
+		RaycastHit hit;
+		Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
+		blockIdentificationText.text = "Nothing";
+		if (hit.collider != null) //if the raycast hits something
+		{
+			GameObject block = hit.transform.gameObject;
+			if (block.GetComponent<ericL_Swappable> () != null) // The block is swappable 
+			{
+				if (block.name.Contains ("AI Rights Block")) {
+					Debug.Log ("AI Rights Block");
+					blockIdentificationText.text = "AI Rights Block";
+				} else if (block.name.Contains ("Death Block")) {
+					Debug.Log ("Death Block");
+					blockIdentificationText.text = "Death Block";
+				} else if (block.name.Contains ("Falling Cube")) {
+					Debug.Log ("Falling Cube");
+					blockIdentificationText.text = "Falling Cube";
+				} else if (block.name.Contains ("Motivational Cube")) {
+					Debug.Log ("Motivational Cube");
+					blockIdentificationText.text = "Motivational Cube";
+				} else if (block.name.Contains ("Standard Cube")) {
+					Debug.Log ("Standard Cube");
+					blockIdentificationText.text = "Standard Cubek";
+				} else if (block.name.Contains ("PopoutBlock")) {
+					Debug.Log ("Popout Block");
+					blockIdentificationText.text = "PopoutBlock";
+				} else if (block.name.Contains ("GlassBlock")) {
+					Debug.Log ("Glass Block");
+					blockIdentificationText.text = "GlassBlock";
+				} else {
+					Debug.Log ("This block is not listed in FPSController.DisplayBlockType()");
+					blockIdentificationText.text = "This block is not listed in FPSController.DisplayBlockType()";
+				}
+
+			}
+		}
 	}
 
     private void GetInput()
