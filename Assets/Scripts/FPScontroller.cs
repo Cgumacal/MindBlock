@@ -98,7 +98,7 @@ public class FPScontroller : MonoBehaviour {
 			{
 				Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();//get the transform for the block you are trying to teleport to 
 				bool TP_Block = hit.transform.gameObject.GetComponent<TeleportBlock>();
-				if (teleportTo.y <= transform.position.y + 1 && Vector3.Distance (teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo> ().getBorderNum () == hit.transform.gameObject.GetComponent<TeleportTo> ().getBorderNum () || TP_Block) {
+				if (Vector3.Distance (teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo> ().getBorderNum () == hit.transform.gameObject.GetComponent<TeleportTo> ().getBorderNum () || TP_Block) {
 					hit.transform.gameObject.GetComponent<BlockColorChange> ().setStateToTeleportable();
 				} 
 				else 
@@ -237,7 +237,7 @@ public class FPScontroller : MonoBehaviour {
                         {
                             Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();//get the transform for the block you are trying to teleport to 
                             bool TP_Block = hit.transform.gameObject.GetComponent<TeleportBlock>();
-                            if (teleportTo.y <= transform.position.y + 1 && Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum() || TP_Block)
+                            if (Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum() || TP_Block)
                             {// if it is below the teleport height, and is within the max distance of the teleport and as teleportable through borders
                                 tpEffect.StartFade();//activate teleport fade
                                 transform.position = teleportTo;//change position of player
