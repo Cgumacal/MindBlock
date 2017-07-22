@@ -15,6 +15,11 @@ public class BorderCrossingCube : MonoBehaviour {
             }
         }
     }*/
+
+    void Start()
+    {
+        GetComponent<TeleportTo>().setBorderNum(BorderNum);
+    }
         
     
 
