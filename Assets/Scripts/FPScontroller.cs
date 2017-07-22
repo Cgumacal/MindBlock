@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class FPScontroller : MonoBehaviour {
@@ -24,6 +25,7 @@ public class FPScontroller : MonoBehaviour {
     private bool levelEnd = false;
     RaycastHit hit;
     private float swapDistance = 3f;
+	[SerializeField] private Text blockIdentificationText;
 
     private GameObject storedBlock;
     private float buttonDownTime;
@@ -57,6 +59,7 @@ public class FPScontroller : MonoBehaviour {
 
         if (!levelEnd)
         {
+			DisplaySwappableBlockType ();
             ChangeBlockColor();
             GetInput();
         }
@@ -105,6 +108,39 @@ public class FPScontroller : MonoBehaviour {
 			}
 		}
 
+	}
+
+	private void DisplaySwappableBlockType() 
+	{
+		RaycastHit hit;
+		Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
+
+		blockIdentificationText.text = "";
+		if (hit.collider != null) //if the raycast hits something
+		{
+			GameObject block = hit.transform.gameObject;
+			if (block.GetComponent<ericL_Swappable> () != null) // The block is swappable 
+			{
+				if (block.name.Contains ("AI Rights Block")) {
+					blockIdentificationText.text = "AI Rights Block";
+				} else if (block.name.Contains ("Death Block")) {
+					blockIdentificationText.text = "Death Block";
+				} else if (block.name.Contains ("Falling Cube")) {
+					blockIdentificationText.text = "Falling Cube";
+				} else if (block.name.Contains ("Motivational Cube")) {
+					blockIdentificationText.text = "Motivational Cube";
+				} else if (block.name.Contains ("Standard Cube")) {
+					blockIdentificationText.text = "Standard Cube";
+				} else if (block.name.Contains ("PopoutBlock")) {
+					blockIdentificationText.text = "Popout Block";
+				} else if (block.name.Contains ("GlassBlock")) {
+					blockIdentificationText.text = "Glass Block";
+				} else {
+					blockIdentificationText.text = "This block is not listed";
+				}
+
+			}
+		}
 	}
 
     private void GetInput()
@@ -199,6 +235,7 @@ public class FPScontroller : MonoBehaviour {
                                 tpEffect.StartFade();//activate teleport fade
                                 transform.position = teleportTo;//change position of player
                                 transform.parent = hit.transform;//change the parent of the player to the current block 
+                                AkSoundEngine.PostEvent("Play_Test_Duck", gameObject);
                             }
                             //send thing activating teleport trail
                         }
