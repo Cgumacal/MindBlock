@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="75">
-	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3403072906" DateHigh="30597486"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3343803205" DateHigh="30601300"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Attenuations\Default Work Unit.wwu" DateLow="3158607705" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Audio Devices\Default Work Unit.wwu" DateLow="3157516979" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Control Surface Sessions\Default Work Unit.wwu" DateLow="3403327804" DateHigh="30597486"/>
@@ -9,17 +9,23 @@
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Dynamic Dialogue\Default Work Unit.wwu" DateLow="3158727790" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Effects\Default Work Unit.wwu" DateLow="3158827853" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Effects\Factory Effects.wwu" DateLow="3159088080" DateHigh="30597484"/>
-	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Events\Default Work Unit.wwu" DateLow="3403202716" DateHigh="30597486"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Events\Default Work Unit.wwu" DateLow="4048409027" DateHigh="30598680"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Events\Music.wwu" DateLow="2935710895" DateHigh="30606190"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Game Parameters\Default Work Unit.wwu" DateLow="3159198201" DateHigh="30597484"/>
-	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="3159248227" DateHigh="30597484"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1845547404" DateHigh="30598163"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Interactive Music Hierarchy\Music_1-1.wwu" DateLow="1671751888" DateHigh="30606190"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Interactive Music Hierarchy\Music_1-2.wwu" DateLow="3689703413" DateHigh="30605586"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Interactive Music Hierarchy\Music_1-3.wwu" DateLow="3690043438" DateHigh="30605586"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Interactive Music Hierarchy\Music_1-4.wwu" DateLow="3689908333" DateHigh="30605586"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="3159288187" DateHigh="30597484"/>
-	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\MindBlock_WwiseProject.wproj" DateLow="3157326789" DateHigh="30597484"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\MindBlock_WwiseProject.Amy Hori.wsettings" DateLow="1975321036" DateHigh="30606201"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\MindBlock_WwiseProject.wproj" DateLow="2747122148" DateHigh="30605585"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Mixing Sessions\Default Work Unit.wwu" DateLow="3159448305" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Modulators\Default Work Unit.wwu" DateLow="3157416870" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Presets\Default Work Unit.wwu" DateLow="3159748561" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Queries\Default Work Unit.wwu" DateLow="3159558375" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Queries\Factory Queries.wwu" DateLow="3159698482" DateHigh="30597484"/>
-	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="3159788576" DateHigh="30597484"/>
+	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\SoundBanks\Default Work Unit.wwu" DateLow="2509990937" DateHigh="30606196"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Soundcaster Sessions\Default Work Unit.wwu" DateLow="3159978741" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\States\Default Work Unit.wwu" DateLow="3160018739" DateHigh="30597484"/>
 	<ValidationCacheItem File="C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\Switches\Default Work Unit.wwu" DateLow="3159498409" DateHigh="30597484"/>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4B6A74E8-A17F-46EA-9F0B-4F6415F1F02C}" SchemaVersion="75">
+	<InteractiveMusic>
+		<WorkUnit Name="Music_1-3" ID="{4B6A74E8-A17F-46EA-9F0B-4F6415F1F02C}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicSegment Name="Puzzle_Sentient_80bpm_3-4_L42_Repeat" ID="{F7E5DCB0-B233-4E24-AD8D-E761F7120C01}" ShortID="587287899">
+					<PropertyList>
+						<Property Name="EndPosition" Type="Real64" Value="94500"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9A682907-FBC6-4750-A60C-DFC3470E32BB}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicTrack Name="Puzzle_Sentient_80bpm_3-4_L42_Repeat" ID="{19157054-084F-4562-8145-B5B152264A98}" ShortID="250873704">
+							<ReferenceList>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Puzzle_Sentient_80bpm_3-4_L42_Repeat" ID="{33490858-AA9C-40E8-B7C3-4FEB69768ABE}" ShortID="718367669">
+									<Language>SFX</Language>
+									<AudioFile>Puzzle_Sentient_80bpm_3-4_L42_Repeat.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<TransitionList>
+								<MusicTransition Name="Root" ID="{EB5FFD21-A456-4B6E-A934-3A4D8E9DDD54}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</TransitionList>
+							<SequenceList>
+								<MusicTrackSequence Name="" ID="{E361BB5A-4736-43D9-8940-5E4780953C0A}">
+									<ClipList>
+										<MusicClip Name="Puzzle_Sentient_80bpm_3-4_L42_Repeat" ID="{35AFA1CE-B3F7-4489-B9B8-0614D193F0FB}">
+											<PropertyList>
+												<Property Name="EndTrimOffset" Type="Real64" Value="94500"/>
+												<Property Name="FadeInMode" Type="int16" Value="0"/>
+												<Property Name="FadeOutMode" Type="int16" Value="0"/>
+											</PropertyList>
+											<AudioSourceRef Name="Puzzle_Sentient_80bpm_3-4_L42_Repeat" ID="{33490858-AA9C-40E8-B7C3-4FEB69768ABE}"/>
+										</MusicClip>
+									</ClipList>
+								</MusicTrackSequence>
+							</SequenceList>
+						</MusicTrack>
+					</ChildrenList>
+					<CueList>
+						<MusicCue Name="Entry Cue" ID="{8BB73B61-5B3E-4F53-AF25-B46CB28CC8EF}"/>
+						<MusicCue Name="Exit Cue" ID="{47792B40-CE91-4E95-89B8-1E4344C41034}">
+							<PropertyList>
+								<Property Name="CueType" Type="int16" Value="1"/>
+								<Property Name="TimeMs" Type="Real64" Value="94500"/>
+							</PropertyList>
+						</MusicCue>
+					</CueList>
+				</MusicSegment>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>
