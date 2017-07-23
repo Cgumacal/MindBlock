@@ -30,7 +30,7 @@ public class FallingBlock : MonoBehaviour {
             StartCoroutine(Delay(fallDelay));
             
         }
-        if (col.transform.tag == "Environment")
+        else
         {
             stoppingBlock = col;
             falling = false;
