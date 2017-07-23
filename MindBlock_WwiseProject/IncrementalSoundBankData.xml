@@ -5,13 +5,13 @@
 			<Language ID="0">
 				<File Name="Init" Hash="2414758598" Timestamp="131415205822645888"/>
 				<File Name="Music" Hash="80301569" Timestamp="131452589380313449"/>
-				<File Name="Music_1_1" Hash="2230401275" Timestamp="131452635872815749"/>
+				<File Name="Music_1_1" Hash="1966203435" Timestamp="131453202477530413"/>
 				<File Name="Test" Hash="3947811792" Timestamp="131415205822380704"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1157198818" Timestamp="131452635872920824"/>
+				<File Name="" Hash="1157198818" Timestamp="131453202477700251"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
@@ -34,13 +34,14 @@
 			<Language ID="0">
 				<File Name="Init" Hash="3806675398" Timestamp="131415205921507649"/>
 				<File Name="Music" Hash="80301569" Timestamp="131452589400169590"/>
-				<File Name="Music_1_1" Hash="2230401275" Timestamp="131452635897553902"/>
+				<File Name="Music_1_1" Hash="1966203435" Timestamp="131453202552978324"/>
+				<File Name="Music_1_2" Hash="1833612305" Timestamp="131453207865975475"/>
 				<File Name="Test" Hash="3947811792" Timestamp="131415205921247491"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="3437475000" Timestamp="131452635897643961"/>
+				<File Name="" Hash="382386784" Timestamp="131453207866120458"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

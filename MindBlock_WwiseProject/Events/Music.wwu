@@ -14,6 +14,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Music_1_2" ID="{B68733C1-827E-44A4-AB5B-6CDD82995CD2}">
+					<ChildrenList>
+						<Action Name="Play" ID="{58EDDD5C-87BB-4DAE-A0F0-560AB37792E7}" ShortID="578337154" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{42F39446-F7DD-4FDA-B9F0-269D2A714B06}" Global="false">
+									<ObjectRef Name="Puzzle_VoiceOfMany_127bpm_7-8_L32" ID="{38E32991-D8A9-4F74-861B-33675292B2EB}" WorkUnitID="{A07A0E33-6A92-47FC-9677-9A7965629285}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
