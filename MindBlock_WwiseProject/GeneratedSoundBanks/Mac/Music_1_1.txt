@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1968663766	Music_1_1			\Music\Music_1_1	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	571456478	Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2	C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\.cache\Mac\SFX\Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2_4B8CC0C5.wem		\Interactive Music Hierarchy\Music_1-1\Puzzle_ParseTutorial_81bpm_3-4_L72-P8M\Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2\Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2		25494124
+	914746465	Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1	C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\.cache\Mac\SFX\Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1_4B8CC0C5.wem		\Interactive Music Hierarchy\Music_1-1\Puzzle_ParseTutorial_81bpm_3-4_L72-P8M\Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1\Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1		3230324
+

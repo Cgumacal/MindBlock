@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8180D6AE-B8FB-407B-97A2-3E3FFD97F46B}" SchemaVersion="75">
+	<Events>
+		<WorkUnit Name="Music" ID="{8180D6AE-B8FB-407B-97A2-3E3FFD97F46B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Music_1_1" ID="{45729074-F73D-49BB-8BA6-48174A59F1FA}">
+					<ChildrenList>
+						<Action Name="Play" ID="{73676C8B-C4E7-4ADC-8247-40E5E0F416CC}" ShortID="205103681" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{22ACA2A5-0FB0-4D88-82DF-7E80CDB3EC8D}" Global="false">
+									<ObjectRef Name="Puzzle_ParseTutorial_81bpm_3-4_L72-P8M" ID="{1BB1C79B-8058-4E26-94B8-8F5CA8F37A0C}" WorkUnitID="{69525AE3-3427-4BB3-8B51-348E0A44AE37}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
