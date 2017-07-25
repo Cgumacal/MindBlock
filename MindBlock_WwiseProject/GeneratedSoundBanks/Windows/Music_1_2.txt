@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	1709803704	Music_1_2_stop			\Music\Music_1_2_stop	
 	1968663765	Music_1_2			\Music\Music_1_2	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size

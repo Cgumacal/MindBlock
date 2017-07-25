@@ -34,14 +34,14 @@
 			<Language ID="0">
 				<File Name="Init" Hash="3806675398" Timestamp="131415205921507649"/>
 				<File Name="Music" Hash="80301569" Timestamp="131452589400169590"/>
-				<File Name="Music_1_1" Hash="1966203435" Timestamp="131453202552978324"/>
-				<File Name="Music_1_2" Hash="1833612305" Timestamp="131453207865975475"/>
+				<File Name="Music_1_1" Hash="4291005284" Timestamp="131454913571581029"/>
+				<File Name="Music_1_2" Hash="125479363" Timestamp="131454913571886245"/>
 				<File Name="Test" Hash="3947811792" Timestamp="131415205921247491"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="382386784" Timestamp="131453207866120458"/>
+				<File Name="" Hash="2029525553" Timestamp="131454913572061373"/>
 			</Language>
 		</XMLInfo>
 	</Platform>
