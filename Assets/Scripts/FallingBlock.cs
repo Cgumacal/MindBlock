@@ -5,6 +5,7 @@ using UnityEngine;
 public class FallingBlock : MonoBehaviour {
     [SerializeField] private float fallSpeed = 1;
     [SerializeField] private float fallDelay = 2;
+    private Collider stoppingBlock;
 
     private bool falling = false;
     private bool canFall = true; 
@@ -23,14 +24,24 @@ public class FallingBlock : MonoBehaviour {
     
     void OnTriggerEnter(Collider col)
     {
+        
         if(col.transform.tag == "Player" && canFall)
         {
             StartCoroutine(Delay(fallDelay));
             
         }
-        if (col.transform.tag == "Environment")
+        else
         {
+            stoppingBlock = col;
             falling = false;
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col == stoppingBlock)
+        {
+            canFall = true;
         }
     }
 

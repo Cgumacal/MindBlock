@@ -16,5 +16,53 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
+		<SoundBank Id="1968663765" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Music_1_2</ObjectPath>
+			<ShortName>Music_1_2</ShortName>
+			<Path>Music_1_2.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1968663765" Name="Music_1_2" ObjectPath="\Events\Music\Music_1_2"/>
+				<Event Id="1709803704" Name="Music_1_2_stop" ObjectPath="\Events\Music\Music_1_2_stop" MaxAttenuation="0.000000"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="987614083" Language="SFX">
+					<ShortName>Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat.wav</ShortName>
+					<Path>SFX\Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat_4B8CC0C5.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1968663766" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Music_1_1</ObjectPath>
+			<ShortName>Music_1_1</ShortName>
+			<Path>Music_1_1.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1968663766" Name="Music_1_1" ObjectPath="\Events\Music\Music_1_1"/>
+				<Event Id="3186819589" Name="Music_1_1_stop" ObjectPath="\Events\Music\Music_1_1_stop" MaxAttenuation="0.000000"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="571456478" Language="SFX">
+					<ShortName>Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2.wav</ShortName>
+					<Path>SFX\Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2_4B8CC0C5.wem</Path>
+				</File>
+				<File Id="914746465" Language="SFX">
+					<ShortName>Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1.wav</ShortName>
+					<Path>SFX\Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1_4B8CC0C5.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3157003241" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Test</ObjectPath>
+			<ShortName>Test</ShortName>
+			<Path>Test.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1768888818" Name="Play_Test_Duck" ObjectPath="\Events\Default Work Unit\Play_Test_Duck"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="102765051" Language="SFX">
+					<ShortName>Test Duck.wav</ShortName>
+					<Path>SFX\Test Duck_9E69E797.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
