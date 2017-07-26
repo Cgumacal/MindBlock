@@ -16,12 +16,28 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
+		<SoundBank Id="1968663765" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Music_1_2</ObjectPath>
+			<ShortName>Music_1_2</ShortName>
+			<Path>Music_1_2.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1968663765" Name="Music_1_2" ObjectPath="\Events\Music\Music_1_2"/>
+				<Event Id="1709803704" Name="Music_1_2_stop" ObjectPath="\Events\Music\Music_1_2_stop" MaxAttenuation="0.000000"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="987614083" Language="SFX">
+					<ShortName>Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat.wav</ShortName>
+					<Path>SFX\Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat_4B8CC0C5.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
 		<SoundBank Id="1968663766" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Music_1_1</ObjectPath>
 			<ShortName>Music_1_1</ShortName>
 			<Path>Music_1_1.bnk</Path>
 			<IncludedEvents>
 				<Event Id="1968663766" Name="Music_1_1" ObjectPath="\Events\Music\Music_1_1"/>
+				<Event Id="3186819589" Name="Music_1_1_stop" ObjectPath="\Events\Music\Music_1_1_stop" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="571456478" Language="SFX">
