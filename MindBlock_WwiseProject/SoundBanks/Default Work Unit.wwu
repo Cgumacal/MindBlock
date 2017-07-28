@@ -12,7 +12,16 @@
 				</SoundBank>
 				<SoundBank Name="Music_1_1" ID="{C4E141FC-A1FA-4EB5-9E02-CAC9FA7FD700}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Music_1_1_stop" ID="{AF0894C1-0F09-4810-B759-5712D9009BE2}" WorkUnitID="{8180D6AE-B8FB-407B-97A2-3E3FFD97F46B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Music_1_1" ID="{45729074-F73D-49BB-8BA6-48174A59F1FA}" WorkUnitID="{8180D6AE-B8FB-407B-97A2-3E3FFD97F46B}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Music_1_2" ID="{73A790A2-EF40-48D2-8E13-6AFA3D790429}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Music_1_2" ID="{B68733C1-827E-44A4-AB5B-6CDD82995CD2}" WorkUnitID="{8180D6AE-B8FB-407B-97A2-3E3FFD97F46B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Music_1_2_stop" ID="{1B86C267-2C40-4822-BFA9-D84F6D4E5E5B}" WorkUnitID="{8180D6AE-B8FB-407B-97A2-3E3FFD97F46B}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

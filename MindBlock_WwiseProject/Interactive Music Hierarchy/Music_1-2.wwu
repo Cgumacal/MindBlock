@@ -3,9 +3,11 @@
 	<InteractiveMusic>
 		<WorkUnit Name="Music_1-2" ID="{A07A0E33-6A92-47FC-9677-9A7965629285}" PersistMode="Standalone">
 			<ChildrenList>
-				<MusicSegment Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{2D997DAF-C3DC-4767-9D4C-2F1FB5A6E92E}" ShortID="51694214">
+				<MusicPlaylistContainer Name="Puzzle_VoiceOfMany_127bpm_7-8_L32" ID="{38E32991-D8A9-4F74-861B-33675292B2EB}" ShortID="69841353">
 					<PropertyList>
-						<Property Name="EndPosition" Type="Real64" Value="52916.6666666667"/>
+						<Property Name="Tempo" Type="Real64" Value="127"/>
+						<Property Name="TimeSignatureLower" Type="int16" Value="8"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="7"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -16,52 +18,94 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<MusicTrack Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{BC86E6E4-DE9E-4EF1-89E5-1CB11E23261D}" ShortID="1001308887">
+						<MusicSegment Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{2D997DAF-C3DC-4767-9D4C-2F1FB5A6E92E}" ShortID="51694214">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="52916.6666666667"/>
+							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9A682907-FBC6-4750-A60C-DFC3470E32BB}"/>
+								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{27A2E1E4-E35B-41D8-891B-54617706490F}" ShortID="987614083">
-									<Language>SFX</Language>
-									<AudioFile>Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat.wav</AudioFile>
-								</AudioFileSource>
+								<MusicTrack Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{BC86E6E4-DE9E-4EF1-89E5-1CB11E23261D}" ShortID="1001308887">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{27A2E1E4-E35B-41D8-891B-54617706490F}" ShortID="987614083">
+											<Language>SFX</Language>
+											<AudioFile>Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{86C52A8A-D8BF-46B4-82D8-9A0E7E8B7BFD}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList/>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{1BFCCEAD-2B32-4925-A6FB-E5EAD6D85357}">
+											<ClipList>
+												<MusicClip Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{492B8D21-1F8D-4DC3-9A3C-CF4A1742B84F}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="52916.6666666667"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{27A2E1E4-E35B-41D8-891B-54617706490F}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
 							</ChildrenList>
-							<TransitionList>
-								<MusicTransition Name="Root" ID="{86C52A8A-D8BF-46B4-82D8-9A0E7E8B7BFD}">
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{0B754B2F-16BC-47ED-A538-958A4EF82473}"/>
+								<MusicCue Name="Exit Cue" ID="{9490CADF-7F9A-45F8-972F-CC979B28598F}">
 									<PropertyList>
-										<Property Name="IsFolder" Type="bool" Value="True"/>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="52916.6666666667"/>
 									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{273ADF7B-B196-499A-9DAC-C5BA1A9D33C7}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{8ADF603A-85E3-44B2-A55E-628467B4891D}">
 									<TransitionInfo/>
 								</MusicTransition>
-							</TransitionList>
-							<SequenceList>
-								<MusicTrackSequence Name="" ID="{1BFCCEAD-2B32-4925-A6FB-E5EAD6D85357}">
-									<ClipList>
-										<MusicClip Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{492B8D21-1F8D-4DC3-9A3C-CF4A1742B84F}">
-											<PropertyList>
-												<Property Name="EndTrimOffset" Type="Real64" Value="52916.6666666667"/>
-												<Property Name="FadeInMode" Type="int16" Value="0"/>
-												<Property Name="FadeOutMode" Type="int16" Value="0"/>
-											</PropertyList>
-											<AudioSourceRef Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{27A2E1E4-E35B-41D8-891B-54617706490F}"/>
-										</MusicClip>
-									</ClipList>
-								</MusicTrackSequence>
-							</SequenceList>
-						</MusicTrack>
-					</ChildrenList>
-					<CueList>
-						<MusicCue Name="Entry Cue" ID="{0B754B2F-16BC-47ED-A538-958A4EF82473}"/>
-						<MusicCue Name="Exit Cue" ID="{9490CADF-7F9A-45F8-972F-CC979B28598F}">
-							<PropertyList>
-								<Property Name="CueType" Type="int16" Value="1"/>
-								<Property Name="TimeMs" Type="Real64" Value="52916.6666666667"/>
-							</PropertyList>
-						</MusicCue>
-					</CueList>
-				</MusicSegment>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{01A02931-FCC8-4C33-B764-5321956BB291}" ShortID="261891762">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{32EF73DB-1D75-4E64-A5A3-24DC8147E085}" ShortID="7683522">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat" ID="{2D997DAF-C3DC-4767-9D4C-2F1FB5A6E92E}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>

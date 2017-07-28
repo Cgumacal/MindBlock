@@ -14,6 +14,45 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Music_1_2" ID="{B68733C1-827E-44A4-AB5B-6CDD82995CD2}">
+					<ChildrenList>
+						<Action Name="Play" ID="{58EDDD5C-87BB-4DAE-A0F0-560AB37792E7}" ShortID="578337154" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{42F39446-F7DD-4FDA-B9F0-269D2A714B06}" Global="false">
+									<ObjectRef Name="Puzzle_VoiceOfMany_127bpm_7-8_L32" ID="{38E32991-D8A9-4F74-861B-33675292B2EB}" WorkUnitID="{A07A0E33-6A92-47FC-9677-9A7965629285}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Music_1_1_stop" ID="{AF0894C1-0F09-4810-B759-5712D9009BE2}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{6A742AFE-3FBE-4476-85DD-ED971DF413A5}" ShortID="392270332" Type="Stop" Scope="One" Global="true">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{A79B72C9-CA61-4CDB-933F-C13063D70FF6}" Global="true">
+									<ObjectRef Name="Puzzle_ParseTutorial_81bpm_3-4_L72-P8M" ID="{1BB1C79B-8058-4E26-94B8-8F5CA8F37A0C}" WorkUnitID="{69525AE3-3427-4BB3-8B51-348E0A44AE37}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Music_1_2_stop" ID="{1B86C267-2C40-4822-BFA9-D84F6D4E5E5B}">
+					<ChildrenList>
+						<Action Name="Stop" ID="{2E49100D-B183-4686-8533-C8480C65F38A}" ShortID="315381371" Type="Stop" Scope="One" Global="true">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{47885582-07FB-40CD-BA72-5F8622677E7B}" Global="true">
+									<ObjectRef Name="Puzzle_VoiceOfMany_127bpm_7-8_L32" ID="{38E32991-D8A9-4F74-861B-33675292B2EB}" WorkUnitID="{A07A0E33-6A92-47FC-9677-9A7965629285}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
