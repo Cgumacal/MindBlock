@@ -25,7 +25,7 @@ public class FPScontroller : MonoBehaviour {
     private bool levelEnd = false;
     RaycastHit hit;
     private float swapDistance = 3f;
-	[SerializeField] private Text blockIdentificationText;
+	[SerializeField] private Text storedBlockText;
 
     private GameObject storedBlock;
     private float buttonDownTime;
@@ -59,7 +59,7 @@ public class FPScontroller : MonoBehaviour {
 
         if (!levelEnd)
         {
-			DisplaySwappableBlockType ();
+			DisplayStoredBlock();
             ChangeBlockColor();
             GetInput();
         }
@@ -110,36 +110,12 @@ public class FPScontroller : MonoBehaviour {
 
 	}
 
-	private void DisplaySwappableBlockType() 
+	private void DisplayStoredBlock() 
 	{
-		RaycastHit hit;
-		Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
-
-		blockIdentificationText.text = "";
-		if (hit.collider != null) //if the raycast hits something
-		{
-			GameObject block = hit.transform.gameObject;
-			if (block.GetComponent<ericL_Swappable> () != null) // The block is swappable 
-			{
-				if (block.name.Contains ("AI Rights Block")) {
-					blockIdentificationText.text = "AI Rights Block";
-				} else if (block.name.Contains ("Death Block")) {
-					blockIdentificationText.text = "Death Block";
-				} else if (block.name.Contains ("Falling Cube")) {
-					blockIdentificationText.text = "Falling Cube";
-				} else if (block.name.Contains ("Motivational Cube")) {
-					blockIdentificationText.text = "Motivational Cube";
-				} else if (block.name.Contains ("Standard Cube")) {
-					blockIdentificationText.text = "Standard Cube";
-				} else if (block.name.Contains ("PopoutBlock")) {
-					blockIdentificationText.text = "Popout Block";
-				} else if (block.name.Contains ("GlassBlock")) {
-					blockIdentificationText.text = "Glass Block";
-				} else {
-					blockIdentificationText.text = "This block is not listed";
-				}
-
-			}
+		if (storedBlock != null) {
+			storedBlockText.text = storedBlock.name;
+		} else {
+			storedBlockText.text = "";
 		}
 	}
 
