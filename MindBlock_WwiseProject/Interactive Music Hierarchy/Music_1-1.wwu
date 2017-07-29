@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{69525AE3-3427-4BB3-8B51-348E0A44AE37}" SchemaVersion="75">
+	<InteractiveMusic>
+		<WorkUnit Name="Music_1-1" ID="{69525AE3-3427-4BB3-8B51-348E0A44AE37}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Puzzle_ParseTutorial_81bpm_3-4_L72-P8M" ID="{1BB1C79B-8058-4E26-94B8-8F5CA8F37A0C}" ShortID="221350940">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="81"/>
+						<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9A682907-FBC6-4750-A60C-DFC3470E32BB}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1" ID="{35A8708D-7669-4C29-B1DC-5C042B7DBD6F}" ShortID="924282681">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="18312.1315192744"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="81"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9A682907-FBC6-4750-A60C-DFC3470E32BB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1" ID="{C9A0DA46-85B8-481A-B8C4-BE5989D8431F}" ShortID="129416461">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1" ID="{349DD068-F4A1-4913-B8D1-149D96BF76DA}" ShortID="914746465">
+											<Language>SFX</Language>
+											<AudioFile>Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{ADD14CAA-CD3A-4C5F-9AE2-6D217F6E686F}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{C40BC9FC-153D-43AC-86C6-644152F8522B}">
+											<ClipList>
+												<MusicClip Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1" ID="{99530712-75BC-4A30-ACE7-B9A0263EE9A0}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="18312.1315192744"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1" ID="{349DD068-F4A1-4913-B8D1-149D96BF76DA}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{B4581CC2-2E52-46C7-B133-B167B5C36108}"/>
+								<MusicCue Name="Exit Cue" ID="{D691D13B-28CB-4821-9ACB-F84D152A7319}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="15584.1753183048"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+						<MusicSegment Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2" ID="{A74C7B73-D7B4-4BB7-8FD5-509672BD6A38}" ShortID="6036859">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="154143.823646733"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="81"/>
+								<Property Name="TimeSignatureUpper" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{9A682907-FBC6-4750-A60C-DFC3470E32BB}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2" ID="{B84E52F6-77D9-4329-A9DD-2DCD6ACE060F}" ShortID="731109972">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2ED7F1FB-21E9-454C-B718-B3066DACF35E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2" ID="{3260191A-2AAD-41E9-A111-F0E55C07C449}" ShortID="571456478">
+											<Language>SFX</Language>
+											<AudioFile>Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{B92E5FB0-3C68-4143-8C67-77D8A8EF02AA}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{688C0B61-70B2-4789-992E-7646A7289C69}">
+											<ClipList>
+												<MusicClip Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2" ID="{3C01A6BD-8848-4C08-A2E8-00CABA551769}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="144524.149659864"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+														<Property Name="PlayAt" Type="Real64" Value="687.119570490637"/>
+													</PropertyList>
+													<AudioSourceRef Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2" ID="{3260191A-2AAD-41E9-A111-F0E55C07C449}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{8A4B93A3-6CE8-42A1-B356-2C7055F9D295}">
+									<PropertyList>
+										<Property Name="TimeMs" Type="Real64" Value="5226.44446964415"/>
+									</PropertyList>
+								</MusicCue>
+								<MusicCue Name="Exit Cue" ID="{D1ABAAE8-2A6F-429D-BFD0-E1CD9D804BC1}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="145211.269230355"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{4E3EB5F7-4BFB-4FA0-993A-E06E23058EEA}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{AB65E265-3A46-440E-8902-87FAF2EDF239}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{16F90FD6-37C0-4C28-B6C4-8922C9807DF1}" ShortID="582223913">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{FCD461E3-F5F2-4042-A91A-3B37E6A1708E}" ShortID="870054744">
+									<PropertyList>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat_1" ID="{35A8708D-7669-4C29-B1DC-5C042B7DBD6F}"/>
+								</MusicPlaylistItem>
+								<MusicPlaylistItem Name="" ID="{5825A6F8-3CD8-4491-AF87-B829AA112508}" ShortID="918343688">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{FA9CC74F-E7F4-4256-9673-2C015850FFB6}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{6AE8AE31-A1DD-4BD9-82D2-847B07B6A0D4}" ShortID="646549894">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<SegmentRef Name="Puzzle_ParseTutorial_81bpm_3-4_L72M-P8M_Repeat-2" ID="{A74C7B73-D7B4-4BB7-8FD5-509672BD6A38}"/>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

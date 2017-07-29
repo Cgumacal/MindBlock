@@ -16,21 +16,20 @@ public class StartBlock : MonoBehaviour {
 		_globalControl.updateSceneNames ();		
 
 		if (_globalControl.sceneHasChanged()) {
+			//Debug.Log ("Scene Changed");
 			// If the scene has changed, the player should spawn on the start block
-			_globalControl.currCheckpointLocation = transform.position;
+			_globalControl.checkpointBlockName = name;
 
 			m_Player.transform.position = transform.position;
 			m_Player.transform.parent = transform;
 
 		} else {
+			//Debug.Log ("Scene NOT Changed");
 			// Otherwise spawn on the latest checkpoint which may still be the start block
-			m_Player.transform.position = _globalControl.currCheckpointLocation;
+			GameObject checkpointBlock = GameObject.Find (_globalControl.checkpointBlockName);
+			m_Player.transform.position = checkpointBlock.transform.position;
+			m_Player.transform.parent = checkpointBlock.transform;
 		}
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

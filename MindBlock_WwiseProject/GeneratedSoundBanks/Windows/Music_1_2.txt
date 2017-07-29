@@ -1,0 +1,7 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1709803704	Music_1_2_stop			\Music\Music_1_2_stop	
+	1968663765	Music_1_2			\Music\Music_1_2	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	987614083	Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat	C:\Users\Amy Hori\Documents\GitHub\MindBlock\MindBlock_WwiseProject\.cache\Windows\SFX\Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat_4B8CC0C5.wem		\Interactive Music Hierarchy\Music_1-2\Puzzle_VoiceOfMany_127bpm_7-8_L32\Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat\Puzzle_VoiceOfMany_127bpm_7-8_L32_Repeat		9334644
+
