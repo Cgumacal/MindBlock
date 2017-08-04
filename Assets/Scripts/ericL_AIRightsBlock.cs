@@ -6,22 +6,13 @@ public class ericL_AIRightsBlock : MonoBehaviour {
 
 	void OnTriggerEnter(Collider block)
 	{
-		ericL_Swappable canSwap = block.GetComponent<ericL_Swappable> ();
-		Debug.Log ("blocked");
-		if (canSwap != null) 
-		{
-			Debug.Log ("blocked");
-			canSwap.NoSwap ();
-		}
+        block.GetComponent<TeleportTo>().canSwap = false; ;
+
 	}
 
 	void OnTriggerExit(Collider block)
 	{
-		ericL_Swappable canSwap = block.GetComponent<ericL_Swappable> ();
+        block.GetComponent<TeleportTo>().canSwap = true;
 
-		if (canSwap != null) 
-		{
-			canSwap.AllowSwap ();
-		}
-	}
+    }
 }

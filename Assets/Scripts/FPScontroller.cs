@@ -166,7 +166,7 @@ public class FPScontroller : MonoBehaviour {
                     {
                         if (holdhit.transform == hit.transform && Vector3.Distance(hit.transform.position, transform.position) < swapDistance)
                         {
-                            if (!hit.transform.name.Contains("Wall") && !hit.transform.name.Contains("Goal") && !hit.transform.name.Contains("Start") && !hit.transform.name.Contains("Checkpoint"))
+                            if (!hit.transform.name.Contains("Wall") && !hit.transform.name.Contains("Goal") && !hit.transform.name.Contains("Start") && !hit.transform.name.Contains("Checkpoint") && hit.transform.GetComponent<TeleportTo>().canSwap)
                             {
                                 if (storedBlock == null) {
                                     Debug.Log(holdhit.transform.name + " saved");
