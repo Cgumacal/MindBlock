@@ -14,7 +14,7 @@ public class TeleportTo : MonoBehaviour {
     //default borderNum = 0 then for every border block increment the number by 1 the border crossing block 
     //will be the one to change this. 
     [SerializeField]private int borderNum = 0;
-            
+    public bool canSwap = true;        
 
 	// Use this for initialization
 	void Start () {
