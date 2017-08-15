@@ -198,12 +198,13 @@ public class FPScontroller : MonoBehaviour {
                 {
                     if (hit.collider != null)//if the raycast hits something
                     {
-                        if (hit.transform == transform.parent && !hit.transform.gameObject.GetComponent<TeleportBlock>())//check if the block that you are looking at is the one you are standing on
+                        /*if (hit.transform == transform.parent && !hit.transform.gameObject.GetComponent<TeleportBlock>())//check if the block that you are looking at is the one you are standing on
                         {
                             hit.transform.gameObject.SendMessage("Activate");//if it is then send a message to that game object to use the gameObjects Activate() Function this will be to activate triggers
                         }
-                        else if (hit.transform.gameObject.GetComponent<TeleportTo>())//if it is not the same block as you are currently standing on check for a teleport script
+                        else */if (hit.transform.gameObject.GetComponent<TeleportTo>())//if it is not the same block as you are currently standing on check for a teleport script
                         {
+                            hit.transform.gameObject.SendMessage("Activate");//if it is then send a message to that game object to use the gameObjects Activate() Function this will be to activate triggers
                             Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();//get the transform for the block you are trying to teleport to 
                             bool TP_Block = hit.transform.gameObject.GetComponent<TeleportBlock>();
                             if (Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum() || TP_Block)

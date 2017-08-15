@@ -22,6 +22,7 @@ public class FallingBlock : MonoBehaviour {
         }
 	}
     
+	/*
     void OnTriggerEnter(Collider col)
     {
         
@@ -36,6 +37,23 @@ public class FallingBlock : MonoBehaviour {
             falling = false;
         }
     }
+    */
+	void OnTriggerEnter(Collider col)
+	{
+
+		if(col.transform.tag == "Player" && canFall)
+		{
+			StartCoroutine(Delay(fallDelay));
+		}
+		else if(col.transform.tag == "AIRightsRadius"){
+			//do nothing
+		}
+		else
+		{
+			stoppingBlock = col;
+			falling = false;
+		}
+	}
 
     void OnTriggerExit(Collider col)
     {

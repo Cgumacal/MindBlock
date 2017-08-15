@@ -20,20 +20,36 @@ public class MovingCube : MonoBehaviour {
         if (canMove)
         {
             transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, MoveSpeed * Time.deltaTime);
-            ChangeTarget();
+            if (transform.position == Endpoint1.transform.position)
+            {
+                ChangeTarget();
+            }
+            else if (transform.position == Endpoint2.transform.position)
+            {
+                ChangeTarget();
+            }
         }
 	}
 
     void ChangeTarget()
     {
-        if (transform.position == Endpoint1.transform.position)
+        if(Target == Endpoint1)
         {
             Target = Endpoint2;
         }
-        else if (transform.position == Endpoint2.transform.position)
+        else if(Target == Endpoint2)
         {
             Target = Endpoint1;
         }
-        
+     
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        Debug.Log("moving block collider hit" + col.transform.tag);
+        if (col.transform.tag != "Player")
+        {
+            ChangeTarget();
+        }
     }
 }
