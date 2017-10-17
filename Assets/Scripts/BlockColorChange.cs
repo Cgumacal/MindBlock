@@ -9,6 +9,7 @@ public class BlockColorChange : MonoBehaviour {
 	//The color of the block when the player has the mouse over the block
 	public Color teleportableBlockColor;
 	public Color nonteleportableBlockColor;
+    public Color storedSwapBlockColor;
     //The original color of the block. This is to be set when the player moves the mouse off of the block
     private Color _originalColor;
     //The material for the blcok
@@ -17,7 +18,7 @@ public class BlockColorChange : MonoBehaviour {
 
 	private enum BlockColorState
 	{
-		TELEPORTABLE, NONTELEPORTABLE, ORIGINAL
+		TELEPORTABLE, NONTELEPORTABLE, STORED, ORIGINAL
 	}
 
 	private BlockColorState state;
@@ -31,6 +32,7 @@ public class BlockColorChange : MonoBehaviour {
         _material = GetComponent<MeshRenderer>().material;
 		teleportableBlockColor = Color.green;
 		nonteleportableBlockColor = Color.red;
+        storedSwapBlockColor = Color.cyan;
         _originalColor = _material.color;
 	}
 
@@ -43,6 +45,9 @@ public class BlockColorChange : MonoBehaviour {
 			case BlockColorState.TELEPORTABLE:
 				_material.color = teleportableBlockColor;
 				break;
+            case BlockColorState.STORED:
+                _material.color = storedSwapBlockColor;
+                break;
 			case BlockColorState.ORIGINAL:
 			default:
 				_material.color = _originalColor;
@@ -61,4 +66,8 @@ public class BlockColorChange : MonoBehaviour {
 	{
 		state = BlockColorState.NONTELEPORTABLE;
 	}
+    public void setStateToStored()
+    {
+        state = BlockColorState.STORED;
+    }
 }

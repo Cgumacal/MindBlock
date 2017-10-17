@@ -94,19 +94,27 @@ public class FPScontroller : MonoBehaviour {
 
 		if (hit.collider != null)//if the raycast hits something
 		{
-			if (hit.transform.gameObject.GetComponent<TeleportTo>())//if it is not the same block as you are currently standing on check for a teleport script
-			{
-				Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();//get the transform for the block you are trying to teleport to 
-				bool TP_Block = hit.transform.gameObject.GetComponent<TeleportBlock>();
-				if (Vector3.Distance (teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo> ().getBorderNum () == hit.transform.gameObject.GetComponent<TeleportTo> ().getBorderNum () || TP_Block) {
-					hit.transform.gameObject.GetComponent<BlockColorChange> ().setStateToTeleportable();
-				} 
-				else 
-				{
-					hit.transform.gameObject.GetComponent<BlockColorChange> ().setStateToNonteleportable();
-				}
-			}
-		}
+            if (hit.transform.gameObject.GetComponent<TeleportTo>())//if it is not the same block as you are currently standing on check for a teleport script
+            {
+                Vector3 teleportTo = hit.transform.gameObject.GetComponent<TeleportTo>().Teleport();//get the transform for the block you are trying to teleport to 
+                bool TP_Block = hit.transform.gameObject.GetComponent<TeleportBlock>();
+
+               /* if (Time.time - buttonDownTime > holdDelay && !didSwap) // makes block color change when stored for swapping
+                {
+                    hit.transform.gameObject.GetComponent<BlockColorChange>().setStateToStored(); // change color of stored block 
+                }*/
+
+                if (Vector3.Distance(teleportTo, transform.position) <= maxTeleport && transform.parent.GetComponent<TeleportTo>().getBorderNum() == hit.transform.gameObject.GetComponent<TeleportTo>().getBorderNum() || TP_Block)
+                {
+                    hit.transform.gameObject.GetComponent<BlockColorChange>().setStateToTeleportable();
+                }
+                
+                else
+                {
+                    hit.transform.gameObject.GetComponent<BlockColorChange>().setStateToNonteleportable();
+                } 
+            }
+        }
 
 	}
 
@@ -160,9 +168,10 @@ public class FPScontroller : MonoBehaviour {
                 {
                     RaycastHit holdhit;
                     Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out holdhit);
-
                     
-                    if(hit.collider != null)
+
+
+                    if (hit.collider != null)
                     {
                         if (holdhit.transform == hit.transform && Vector3.Distance(hit.transform.position, transform.position) < swapDistance)
                         {
@@ -170,6 +179,7 @@ public class FPScontroller : MonoBehaviour {
                             {
                                 if (storedBlock == null) {
                                     Debug.Log(holdhit.transform.name + " saved");
+                                    
                                     if (hit.transform.name.Contains("Moving"))
                                     {
                                         storedBlock = holdhit.transform.parent.gameObject;
@@ -263,9 +273,11 @@ public class FPScontroller : MonoBehaviour {
 
         if(transform.parent == storedBlock.transform)
         {
+            hit.transform.gameObject.GetComponent<BlockColorChange>().setStateToStored(); // change color of stored block 
             parentSwap = 1;
             transform.parent = null;
-        }else if(transform.parent == secondBlock.transform)
+        }
+        else if(transform.parent == secondBlock.transform)
         {
             parentSwap = 2;
             transform.parent = null;
@@ -284,6 +296,7 @@ public class FPScontroller : MonoBehaviour {
                 secondBlock = secondBlock.GetComponentInChildren<TeleportTo>().gameObject;
                 Debug.Log(secondBlock.name);
                 transform.position = secondBlock.transform.position;
+
             }
             transform.parent = secondBlock.transform;
 

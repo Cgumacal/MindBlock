@@ -18,6 +18,7 @@ public class VRSliderBar : MonoBehaviour {
     public void increaseSliderValue(float amount)
     {
         slider.value += amount;
+
     }
     public void decreaseSliderValue(float amount)
     {
